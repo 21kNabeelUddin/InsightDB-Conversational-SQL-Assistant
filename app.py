@@ -106,7 +106,7 @@ def get_response(user_query: str, db, chat_history: list):
         RunnablePassthrough.assign(
             schema=lambda _: "Collections in sample_mflix",  # Replace with actual schema
             response=lambda _: response,
-            query=query,
+            query=lambda _: query,  # Wrap query in a lambda function
         )
         | prompt
         | llm
