@@ -1,4 +1,3 @@
-
 from langchain_core.messages import AIMessage, HumanMessage
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
@@ -11,7 +10,6 @@ import streamlit as st
 
 # Access the GROQ API key from Streamlit Secrets
 groq_api_key = st.secrets["GROQ_API_KEY"]
-
 
 def init_database(user: str, password: str, host: str, port: str, database: str) -> SQLDatabase:
     db_uri = f"mysql+mysqlconnector://{user}:{password}@{host}:{port}/{database}"
